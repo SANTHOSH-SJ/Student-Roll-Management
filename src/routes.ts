@@ -1,5 +1,5 @@
-import { StudentController } from "./controller/StudentController"
-import { RollController } from "./controller/RollController"
+import { StudentController } from "./controller/student-controller"
+import { RollController } from "./controller/roll-controller"
 
 export const Routes = [
   {
