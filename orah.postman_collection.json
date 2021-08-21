@@ -1,0 +1,387 @@
+{
+	"info": {
+		"_postman_id": "9504e92a-464c-4464-a2cf-1590d84aea17",
+		"name": "orah",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "students",
+			"item": [
+				{
+					"name": "list-all-students",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4001/student/get-all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"student",
+								"get-all"
+							]
+						},
+						"description": "    "
+					},
+					"response": []
+				},
+				{
+					"name": "add-student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\": \"boardingWare\",\r\n    \"last_name\" : \"orah\",\r\n    \"photo_url\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/student/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"student",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-student Copy",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":31,\r\n    \"first_name\": \"boardingWare\",\r\n    \"last_name\" : \"orah\",\r\n    \"photo_url\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/student/update",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"student",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/student/delete/8",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"student",
+								"delete",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "group",
+			"item": [
+				{
+					"name": " group create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"group1\",\r\n    \"number_of_weeks\": 1,\r\n    \"roll_states\" : [\"absent\", \"present\", \"late\"],\r\n    \"incidents\" : 1,\r\n    \"ltmt\" : \"<\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/group/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"group",
+								"create"
+							]
+						},
+						"description": "        "
+					},
+					"response": []
+				},
+				{
+					"name": "list-all-group",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/group/get-all",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"group",
+								"get-all"
+							]
+						},
+						"description": "    "
+					},
+					"response": []
+				},
+				{
+					"name": "students-in-group",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/group/get-students-in-group",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"group",
+								"get-students-in-group"
+							]
+						},
+						"description": "    "
+					},
+					"response": []
+				},
+				{
+					"name": "update group",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 12,\r\n    \"name\" : \"group3\",\r\n    \"number_of_weeks\": 1,\r\n    \"roll_states\" : \"absent\",\r\n    \"incidents\" : 2,\r\n    \"ltmt\" : \">\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/group/update",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"group",
+								"update"
+							]
+						},
+						"description": "        "
+					},
+					"response": []
+				},
+				{
+					"name": "deleteGroup",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 11,\r\n    \"name\" : \"group1\",\r\n    \"number_of_weeks\": 1,\r\n    \"roll_states\" : \"abset\",\r\n    \"incidents\" : 1,\r\n    \"ltmt\" : \">\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/group/delete",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"group",
+								"delete"
+							]
+						},
+						"description": "        "
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "roll",
+			"item": [
+				{
+					"name": "all-roll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/roll/get-by-id/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"roll",
+								"get-by-id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add roll",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"chemistry\",\r\n    \"completed_at\" : \"2021-08-22\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/roll/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"roll",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-student-state",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"roll_id\": 2,\r\n    \"student_id\":10,\r\n    \"state\": \"present\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/roll/add-student-roll-state",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"roll",
+								"add-student-roll-state"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-student-state-multiple",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\r\n    \"roll_id\": 1,\r\n    \"student_id\":10,\r\n    \"state\": \"present\"\r\n}]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/roll/add-student-states",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"roll",
+								"add-student-states"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": " http://localhost:4001"
+		}
+	]
+}

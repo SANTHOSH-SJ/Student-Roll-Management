@@ -26,8 +26,7 @@ export class StudentController {
 
   async updateStudent(request: Request, response: Response, next: NextFunction) {
     const { body: params } = request
-
-    this.studentRepository.findOne(params.id).then((student) => {
+    return this.studentRepository.findOne(params.id).then((student) => {
       const updateStudentInput: UpdateStudentInput = {
         id: params.id,
         first_name: params.first_name,
@@ -35,13 +34,14 @@ export class StudentController {
         photo_url: params.photo_url,
       }
       student.prepareToUpdate(updateStudentInput)
-
       return this.studentRepository.save(student)
     })
   }
 
   async removeStudent(request: Request, response: Response, next: NextFunction) {
-    let studentToRemove = await this.studentRepository.findOne(request.params.id)
-    await this.studentRepository.remove(studentToRemove)
+    let studentToRemove = await this.studentRepository.findOne(request.params.id);
+    if (studentToRemove)
+      return await this.studentRepository.remove(studentToRemove)
+      return {error : "Student does not exist"};
   }
 }
